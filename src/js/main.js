@@ -4,25 +4,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const statusText = document.getElementById('status-text');
     const profileImg = document.getElementById('profile-img');
 
+    // Boshlang'ich holat
     let isRunning = true;
 
-    toggleBtn.addEventListener('click', () => {
-        isRunning = !isRunning;
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            isRunning = !isRunning;
 
-        if (isRunning) {
-            // YONIQ HOLAT
-            statusText.innerText = "Service: Running";
-            statusText.style.color = "#2ecc71";
-            profileImg.style.border = "6px solid #2ecc71";
-            toggleBtn.classList.remove('off');
-            toggleIcon.className = "fas fa-power-off";
-        } else {
-            // O'CHIK HOLAT
-            statusText.innerText = "Service: Stopped";
-            statusText.style.color = "#e74c3c";
-            profileImg.style.border = "6px solid #e74c3c";
-            toggleBtn.classList.add('off');
-            toggleIcon.className = "fas fa-play";
-        }
-    });
+            if (isRunning) {
+                // ACTIVE HOLATI
+                statusText.innerText = "Service: Running";
+                statusText.style.color = "#2ecc71";
+                profileImg.style.border = "6px solid #2ecc71";
+                toggleBtn.classList.remove('off');
+                toggleIcon.className = "fas fa-power-off";
+                console.log("Service status: Running");
+            } else {
+                // STOPPED HOLATI
+                statusText.innerText = "Service: Stopped";
+                statusText.style.color = "#e74c3c";
+                profileImg.style.border = "6px solid #e74c3c";
+                toggleBtn.classList.add('off');
+                toggleIcon.className = "fas fa-play";
+                console.log("Service status: Stopped");
+            }
+        });
+    }
 });

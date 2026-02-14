@@ -2,19 +2,33 @@
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="container">
+    <nav class="navbar">
+        <div class="nav-logo">DASHBOARD</div>
+        <ul class="nav-links">
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> Stats</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
         <div class="profile-card">
-            <img src="assets/Profile.png" id="profile-img" alt="Profile">
-            <h2 id="username">Foydalanuvchi</h2>
-            <p id="status-text">Service: Running</p>
+            <div class="img-container">
+                <img src="assets/Profile.png" id="profile-img" alt="Profile">
+            </div>
+            <h2>Foydalanuvchi Profili</h2>
+            <div id="status-container">
+                <span id="status-text">Service: Running</span>
+            </div>
         </div>
-    </div>
+    </main>
 
     <button id="service-toggle" class="btn-toggle">
         <i id="toggle-icon" class="fas fa-power-off"></i>
