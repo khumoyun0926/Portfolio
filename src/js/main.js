@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.getElementById('service-toggle');
+    const toggleIcon = document.getElementById('toggle-icon');
     const statusText = document.getElementById('status-text');
     const profileImg = document.getElementById('profile-img');
 
@@ -9,21 +10,19 @@ document.addEventListener("DOMContentLoaded", () => {
         isRunning = !isRunning;
 
         if (isRunning) {
-            // Servis YONGANDA
+            // YONIQ HOLAT
             statusText.innerText = "Service: Running";
             statusText.style.color = "#2ecc71";
-            profileImg.style.border = "5px solid #2ecc71";
+            profileImg.style.border = "6px solid #2ecc71";
             toggleBtn.classList.remove('off');
-            toggleBtn.innerHTML = 'ON'; // Yoki xohlagan ikonkangiz
+            toggleIcon.className = "fas fa-power-off";
         } else {
-            // Servis O'CHGANDA
+            // O'CHIK HOLAT
             statusText.innerText = "Service: Stopped";
             statusText.style.color = "#e74c3c";
-            profileImg.style.border = "5px solid #e74c3c";
+            profileImg.style.border = "6px solid #e74c3c";
             toggleBtn.classList.add('off');
-            toggleBtn.innerHTML = 'OFF';
+            toggleIcon.className = "fas fa-play";
         }
-        
-        console.log("Service status:", isRunning ? "Active" : "Inactive");
     });
 });
