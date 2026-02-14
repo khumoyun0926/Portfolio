@@ -2,127 +2,24 @@
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Dashboard</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        /* Profil va Status qismi */
-        .profile-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            text-align: center;
-            width: 300px;
-        }
-
-        #profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #2ecc71; /* Boshida yashil (Running) */
-            transition: 0.4s;
-            margin-bottom: 15px;
-        }
-
-        h2 { margin: 10px 0 5px; color: #333; }
-        
-        #status-text {
-            font-weight: bold;
-            color: #2ecc71;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Floating Toggle Tugmasi (O'ng pastki burchakda) */
-        .btn-toggle {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.4);
-            font-size: 24px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        .btn-toggle:hover {
-            transform: scale(1.1) rotate(15deg);
-        }
-
-        /* O'chgandagi holati (Qizil) */
-        .btn-toggle.off {
-            background-color: #e74c3c;
-            box-shadow: 0 5px 20px rgba(231, 76, 60, 0.4);
-        }
-
-        .btn-toggle:active {
-            transform: scale(0.9);
-        }
-    </style>
 </head>
 <body>
 
-    <div class="profile-card">
-        <img src="assets/Profile.png" id="profile-img" alt="Profile Image">
-        <h2>Foydalanuvchi</h2>
-        <p id="status-text">Service: Running</p>
+    <div class="container">
+        <div class="profile-card">
+            <img src="assets/Profile.png" id="profile-img" alt="Profile">
+            <h2 id="username">Foydalanuvchi</h2>
+            <p id="status-text">Service: Running</p>
+        </div>
     </div>
 
-    <button id="service-toggle" class="btn-toggle" title="Toggle Service">
+    <button id="service-toggle" class="btn-toggle">
         <i id="toggle-icon" class="fas fa-power-off"></i>
     </button>
 
-    <script>
-        const toggleBtn = document.getElementById('service-toggle');
-        const toggleIcon = document.getElementById('toggle-icon');
-        const statusText = document.getElementById('status-text');
-        const profileImg = document.getElementById('profile-img');
-
-        let isRunning = true; // Boshlanishida yoniq deb hisoblaymiz
-
-        toggleBtn.addEventListener('click', () => {
-            isRunning = !isRunning;
-
-            if (isRunning) {
-                // Yoniq holati (Yashil)
-                statusText.innerText = "Service: Running";
-                statusText.style.color = "#2ecc71";
-                profileImg.style.border = "4px solid #2ecc71";
-                toggleBtn.classList.remove('off');
-                toggleIcon.className = "fas fa-power-off";
-            } else {
-                // O'chiq holati (Qizil)
-                statusText.innerText = "Service: Stopped";
-                statusText.style.color = "#e74c3c";
-                profileImg.style.border = "4px solid #e74c3c";
-                toggleBtn.classList.add('off');
-                toggleIcon.className = "fas fa-play";
-            }
-        });
-    </script>
-
+    <script src="main.js"></script>
 </body>
 </html>
