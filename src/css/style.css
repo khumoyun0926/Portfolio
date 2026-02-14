@@ -1,0 +1,67 @@
+/* Asosiy sozlamalar */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Profil kartasi */
+.profile-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 250px;
+}
+
+#profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #2ecc71; /* Boshida yashil border */
+    transition: all 0.4s ease;
+}
+
+#status-text {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #2ecc71; /* Boshida yashil matn */
+    font-size: 18px;
+}
+
+/* Floating Toggle Tugmasi (Navbar ichida emas!) */
+.btn-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
+}
+
+.btn-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Servis o'chgandagi holat */
+.btn-toggle.off {
+    background-color: #e74c3c;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
